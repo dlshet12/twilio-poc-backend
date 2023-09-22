@@ -62,7 +62,9 @@ app.post('/twilio/token/:identity', async (req, res, next) => {
   console.log('USER 2 ID: ', user2)
     const token = await generateToken(String(user1))
     const chatroomName = findOrCreateChatRoom(String(user1), String(user2));
-    res.send({ chat_token: token.toJwt(), chat_room: { name: chatroomName } });
+    const returnData = { chat_token: token.toJwt(), chat_room: { name: chatroomName } };
+    console.log('RETURN DATA: ', returnData);
+    res.send(returnData);
 })
 
 const PORT = process.env.PORT || 4000;
