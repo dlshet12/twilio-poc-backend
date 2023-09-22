@@ -54,18 +54,20 @@ app.use(cors())
 
 app.post('/twilio/token/:identity', async (req, res, next) => {
   let { receiver_id: user2} = req.body 
+  const user1 = req.params.identity
   if (!user2) {
     user2 = 'nil';
   }
-  console.log('USER ID: ', user2)
-    const token = await generateToken(String(req.params.identity))
-    const chatroomName = findOrCreateChatRoom(String(req.params.identity), String(user2));
+  console.log('USER 1 ID: ', user1)
+  console.log('USER 2 ID: ', user2)
+    const token = await generateToken(String(user1))
+    const chatroomName = findOrCreateChatRoom(String(user1), String(user2));
     res.send({ chat_token: token.toJwt(), chat_room: { name: chatroomName } });
 })
 
 const PORT = process.env.PORT || 4000;
 
-app.listen(PORT, function (identity) {
+app.listen(PORT, function () {
   console.log(`CORS-enabled web server listening on port ${PORT}`)
 })
 
