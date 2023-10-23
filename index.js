@@ -51,7 +51,9 @@ function generateUniqueChatRoomName() {
 }
 
 app.use(cors())
-
+app.post('/webhook', (req, res) => {
+  res.sendStatus(200);
+})
 app.post('/twilio/token/:identity', async (req, res, next) => {
   let { receiver_id: user2} = req.body 
   const user1 = req.params.identity
