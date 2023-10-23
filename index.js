@@ -52,7 +52,7 @@ function generateUniqueChatRoomName() {
 
 app.use(cors())
 app.post('/webhook', (req, res) => {
-  console.log('CALLED WEBHOOK HENCE MESSAGE SHOULD BE ADDED BRO!', JSON.stringify(req));
+  console.log('CALLED WEBHOOK HENCE MESSAGE SHOULD BE ADDED BRO!', req);
   res.sendStatus(200);
 })
 app.post('/twilio/token/:identity', async (req, res, next) => {
