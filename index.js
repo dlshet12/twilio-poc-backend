@@ -2,6 +2,7 @@ var express = require('express')
 var cors = require('cors')
 var app = express();
 app.use(express.json())
+app.use(express.urlencoded({ extended: false }));
 
 const twilioAccountSid = "AC5e774af019192c57c653440f4c5b80d5";
 const twilioApiKey = "SKe43b757259562644f940b532a21ef882";
