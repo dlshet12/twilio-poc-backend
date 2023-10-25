@@ -4,10 +4,10 @@ var app = express();
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }));
 
-const twilioAccountSid = "AC5e774af019192c57c653440f4c5b80d5";
-const twilioApiKey = "SKe43b757259562644f940b532a21ef882";
-const twilioApiSecret = "yGJsgSeYqIDj94fa15WWPIVAFzUUzZvP";
-const serviceSid = "ISab92220c61fd40cfb241d110ffc51a2b";
+const twilioAccountSid = "AC9009294d51f79db20dcefd6498385dc9"; // "AC5e774af019192c57c653440f4c5b80d5";
+const twilioApiKey = "SKbb4379d4fbb6b117e4dd849500d43de9"; //"SKe43b757259562644f940b532a21ef882";
+const twilioApiSecret = "YHYJr5PsEcgqkdsyDAWJfgoNksPwUINS" //"yGJsgSeYqIDj94fa15WWPIVAFzUUzZvP"; 
+const serviceSid = "IS4ad19154133b4032a9a21a4d63463108";
 
 const fs = require('fs');
 const dataFilePath = 'chatData.json';
